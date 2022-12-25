@@ -21,6 +21,7 @@ export interface DataType {
 export const _detailsHid = atom({}) as any;
 export const _accountData = atom<DataType[]>([]);
 export const _filterAccountData = atom<DataType[]>([]);
+export const _isTableLoading = atom<boolean>(false);
 // export const _postData = atom("2333") as any;
 // function
 // export function addPostData(key, value) {
@@ -47,4 +48,11 @@ export function getAccountData() {
     };
     _accountData.set([..._accountData.get(), data]);
   }
+}
+export function tableLoading() {
+  _isTableLoading.set(true);
+  getAccountData();
+  setTimeout(() => {
+    _isTableLoading.set(false);
+  }, 1000);
 }

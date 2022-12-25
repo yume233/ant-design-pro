@@ -9,11 +9,13 @@ import {
   getAccountData,
   _accountData,
   _filterAccountData,
+  _isTableLoading,
 } from "../../store/data";
 import Query from "./Query";
 import GenKey from "./GenKey";
 export default () => {
   const data = useStore(_accountData);
+  const isLoading = useStore(_isTableLoading);
   useEffect(() => {
     getAccountData();
   }, []);
@@ -64,6 +66,7 @@ export default () => {
         columns={columns}
         dataSource={data}
         pagination={{ position: ["bottomCenter"] }}
+        loading={isLoading}
       ></TableData>
     </Main>
   );

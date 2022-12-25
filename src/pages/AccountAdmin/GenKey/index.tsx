@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, Modal, InputNumber, Input, Select } from "antd";
 import { PlusOutlined, RedoOutlined } from "@ant-design/icons";
-import { getAccountData } from "../../../store/data";
+import { getAccountData, tableLoading } from "../../../store/data";
 export default () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -48,7 +48,7 @@ export default () => {
         <Button
           icon={<RedoOutlined />}
           onClick={async () => {
-            getAccountData();
+            tableLoading();
           }}
         >
           刷新
