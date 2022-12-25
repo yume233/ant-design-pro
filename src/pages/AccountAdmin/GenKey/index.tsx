@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, Modal, InputNumber, Input, Select } from "antd";
 import { PlusOutlined, RedoOutlined } from "@ant-design/icons";
+import { getAccountData } from "../../../store/data";
 export default () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -18,7 +19,6 @@ export default () => {
   };
   return (
     <>
-      {" "}
       <Modal
         title="生成激活码"
         open={isModalOpen}
@@ -45,11 +45,17 @@ export default () => {
         </div>
       </Modal>
       <GenKey>
-        <Button icon={<RedoOutlined />}>刷新</Button>
+        <Button
+          icon={<RedoOutlined />}
+          onClick={async () => {
+            getAccountData();
+          }}
+        >
+          刷新
+        </Button>
         <Button type="primary" icon={<PlusOutlined />} onClick={showModal}>
           生成激活码
         </Button>
-        <Button>剩余可用积分 0</Button>
       </GenKey>
     </>
   );
