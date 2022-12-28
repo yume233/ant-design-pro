@@ -50,6 +50,7 @@ export function getAccountData() {
   }
 }
 export function tableLoading() {
+  debugger;
   _isTableLoading.set(true);
   getAccountData();
   setTimeout(() => {
