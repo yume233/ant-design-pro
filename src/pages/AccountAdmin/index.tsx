@@ -6,18 +6,17 @@ import { useStore } from "@nanostores/react";
 import type { ColumnsType } from "antd/es/table";
 import {
   DataType,
-  getAccountData,
-  _accountData,
+  cleanFilterArray,
   _filterAccountData,
   _isTableLoading,
 } from "../../store/data";
 import Query from "./Query";
 import GenKey from "./GenKey";
 export default () => {
-  const data = useStore(_accountData);
+  const data = useStore(_filterAccountData);
   const isLoading = useStore(_isTableLoading);
   useEffect(() => {
-    getAccountData();
+    cleanFilterArray();
   }, []);
 
   const columns: ColumnsType<DataType> = [
@@ -72,8 +71,8 @@ export default () => {
   );
 };
 const Main = styled.div`
-  width: 90vw;
-  height: 86vh;
+  width: 100%;
+  height: 94%;
   display: flex;
   flex-direction: column;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -85,7 +84,7 @@ const Main = styled.div`
 const TableData = styled(Table)`
   margin-top: 10px;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 const TagTime = styled.div`
   display: flex;

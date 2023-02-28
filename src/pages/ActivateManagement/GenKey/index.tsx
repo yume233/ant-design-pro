@@ -18,7 +18,6 @@ export default () => {
   };
   return (
     <>
-      {" "}
       <Modal
         title="生成激活码"
         open={isModalOpen}

@@ -1,8 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 //[ package ]
-import { AnimationCSS } from "./animation";
-import "./fonts.css";
-import ElementCSS from "assets/element-ui-icon/index.css";
+import { AnimationCSS } from './animation'
+import './fonts.css'
+import ElementCSS from 'assets/element-ui-icon/index.css'
 //[ css ]
 
 //=> Style | '全局样式'
@@ -88,4 +88,4 @@ body {
 	color: #597db7;
 	border-radius: 2px;
 }
-`;
+`
