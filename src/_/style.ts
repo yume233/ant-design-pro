@@ -2,14 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 //[ package ]
 import { AnimationCSS } from './animation'
 import './fonts.css'
-import ElementCSS from 'assets/element-ui-icon/index.css'
 //[ css ]
 
 //=> Style | '全局样式'
 export const GlobalStyle = createGlobalStyle`
 /* 引入其他 CSS */
 ${AnimationCSS}
-${ElementCSS}
 *,
 body,
 html {
