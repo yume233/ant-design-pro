@@ -83,9 +83,8 @@ export function cleanFilterArray() {
 }
 export function tableLoading() {
 	_isTableLoading.set(true)
-	cleanFilterArray()
+	getAccountData()
 	setTimeout(() => {
 		_isTableLoading.set(false)
 	}, 1000)
-	//并不稳定 有待优化
 }
